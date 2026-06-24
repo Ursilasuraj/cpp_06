@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 09:10:37 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/06/17 07:14:34 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/06/17 11:15:15 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int main(int argc, char *argv[])
 {
-		if (argc != 2) {
+		if (argc != 2) 
+		{
 			std::cout << "Usage: " << argv[0] << " < literal >" << std::endl;
 			return 1;
 		}
