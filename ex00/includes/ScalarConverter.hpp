@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 07:14:57 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/06/20 15:39:37 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/06/29 08:14:44 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SCALARCONVERTER_HPP
 
 #include <iostream>
-#include <string>
+#include <string_view>
 
 class ScalarConverter
 {
@@ -23,6 +23,9 @@ private:
 	ScalarConverter(const ScalarConverter&);
 	ScalarConverter &operator = (const ScalarConverter&);
 	~ScalarConverter();
+
 public:
-  static void convert(std::string_view literal);
+	static void convert(std::string_view literal);
 };
+
+#endif
