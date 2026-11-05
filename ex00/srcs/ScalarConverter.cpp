@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: us <us@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 13:45:06 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/06/29 16:06:59 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/05 15:22:49 by us               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,6 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other) {
 ScalarConverter::~ScalarConverter() {}
 
 
-static bool isPseudoLiteral(std::string_view literal)
-{
-	return literal == "nan" || literal == "nanf"
-	|| literal == "+inf" || literal == "-inf"
-	|| literal == "inf" || literal == "+inff"
-	|| literal == "+inff" || literal == "-inff";
-}
-
 static bool isIntegerValue(double value)
 {
 	return std::isfinite(value) && value == static_cast<long long>(value);
@@ -63,7 +55,7 @@ static void printChar(double value)
 		}
 		else
 		{
-			std::cout << "Non displayble";
+			std::cout << "Non displayable";
 		}
 		std::cout << '\n';
 	}
@@ -76,7 +68,7 @@ static void printInt(double value)
 		|| value < std::numeric_limits<int>::min()
 		|| value > std::numeric_limits<int>::max())
 	{
-		std::cout << "impossible:";
+		std::cout << "impossible";
 	}
 	else
 	{
@@ -123,32 +115,6 @@ static void printDouble(double value)
 	std::cout << '\n';
 }
 
-static bool parseValue(std::string_view literal, double &value)
-{
-	if (literal.size() == 1 && !std::isdigit(static_cast<unsigned char>(literal[0])))
-	{
-		value = static_cast<double>(literal[0]);
-		return true;
-	}
-	try
-	{
-		const std::string input(literal);
-		size_t idx = 0;
-		value = std::stod(input, &idx);
-
-		if (idx != input.size())
-		{
-			if (!(idx + 1 == input.size() && input.back() == 'f'))
-				return false;
-		}
-		return true;
-	}
-	catch (const std::exception &)
-	{
-		return false;
-	}
-}
-
 static void printAllTypes(double value)
 {
 	printChar(value);
@@ -161,17 +127,6 @@ void ScalarConverter::convert(std::string_view literal)
 {
 	double value;
 
-	if (isPseudoLiteral(literal))
-	{
-		if (literal == "nan" || literal == "nanf")
-			value = std::numeric_limits<double>::quiet_NaN();
-		else if (literal == "+inf" || literal == "inf" || literal == "+inff" || literal == "inff")
-			value = std::numeric_limits<double>::infinity();
-		else
-			value = -std::numeric_limits<double>::infinity();
-		printAllTypes(value);
-		return;
-	}
 	if (!parseValue(literal, value))
 	{
 		std::cout << "char: impossible\n";

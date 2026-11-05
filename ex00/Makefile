@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+         #
+#    By: us <us@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/15 05:32:19 by uvadakku          #+#    #+#              #
-#    Updated: 2026/06/29 10:09:57 by uvadakku         ###   ########.fr        #
+#    Updated: 2026/11/05 15:01:12 by us               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC_DIR = srcs
 OBJ_DIR = objs
 
 SRCS = main.cpp \
-							ScalarConverter.cpp 
+		ScalarConverter.cpp \
+		converter.cpp
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 

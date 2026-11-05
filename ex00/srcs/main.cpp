@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uvadakku <uvadakku@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: us <us@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 09:10:37 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/06/17 11:15:15 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/05 15:00:55 by us               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include <iostream>
 
 int main(int argc, char *argv[])
 {
 		if (argc != 2) 
 		{
-			std::cout << "Usage: " << argv[0] << " < literal >" << std::endl;
+			std::cout << "Enter a char/int/float/double literal: " << std::endl;
 			return 1;
 		}
 		ScalarConverter::convert(argv[1]);

@@ -23,6 +23,7 @@ private:
 	ScalarConverter(const ScalarConverter&);
 	ScalarConverter &operator = (const ScalarConverter&);
 	~ScalarConverter();
+	static bool parseValue(std::string_view literal, double &value);
 
 public:
 	static void convert(std::string_view literal);
