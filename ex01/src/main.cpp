@@ -6,13 +6,13 @@
 /*   By: us <us@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 15:34:29 by us                #+#    #+#             */
-/*   Updated: 2026/11/06 16:56:59 by us               ###   ########.fr       */
+/*   Updated: 2026/11/08 18:49:32 by us               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "../includes/Serializer.h"
-#include "../includes/Data.h"
+#include "../includes/Serializer.hpp"
+#include "../includes/Data.hpp"
 
 int main()
 {

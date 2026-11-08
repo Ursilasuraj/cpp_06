@@ -6,11 +6,11 @@
 /*   By: us <us@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 16:57:50 by us                #+#    #+#             */
-/*   Updated: 2026/11/06 17:30:16 by us               ###   ########.fr       */
+/*   Updated: 2026/11/08 18:49:22 by us               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Data.h"
+#include "../includes/Data.hpp"
 
 
 Data::Data(int value) : _value(value) 
